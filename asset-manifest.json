@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/my-gpt/static/css/main.fca04ee1.css",
-    "main.js": "/my-gpt/static/js/main.52636a84.js",
+    "main.js": "/my-gpt/static/js/main.a1e68c97.js",
     "static/media/robo_icon.png": "/my-gpt/static/media/robo_icon.6bb02b0a33da426ab4da.png",
     "static/media/person_icon.png": "/my-gpt/static/media/person_icon.bc822b61ed1fc4973057.png",
     "index.html": "/my-gpt/index.html",
     "main.fca04ee1.css.map": "/my-gpt/static/css/main.fca04ee1.css.map",
-    "main.52636a84.js.map": "/my-gpt/static/js/main.52636a84.js.map"
+    "main.a1e68c97.js.map": "/my-gpt/static/js/main.a1e68c97.js.map"
   },
   "entrypoints": [
     "static/css/main.fca04ee1.css",
-    "static/js/main.52636a84.js"
+    "static/js/main.a1e68c97.js"
   ]
 }
