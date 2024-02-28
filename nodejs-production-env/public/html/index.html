@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Chatroom</title>
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+    <h1>My-GPT</h1>
+    <!-- <select id="bot-select" > -->
+        <!-- <option value="enthusiastic" selected>enthusiastic-bot</option> -->
+        <!-- <option value="friend" selected>friendly-bot</option> -->
+        <!-- <option value="professional">professional-bot</option> -->
+        <!-- <option value="caring">caring-bot</option> -->
+        <!-- <option value="witty">witty-bot</option> -->
+    <!-- </select> -->
+    <div class="center-container">
+        <div id="chat-container" class="chat-container"></div>
+    </div>
+
+    <div class="center-container">
+        <div class="input-container">
+            <input type="text" id="message-input" placeholder="Type your message" onkeydown="handleKeyPress(event)">
+            <input type="submit" value="Send" onclick="sendMessage()">
+        </div>
+    </div>
+
+    <script>
+        window.serverPath = "http://localhost:3000";
+    </script>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="../scripts/indexScript.js"></script>
+    
+</body>
+</html>
