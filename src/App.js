@@ -106,7 +106,7 @@ function App() {
   }
 
     // Load the model
-    const model = await loadLayersModel(process.env.PUBLIC_URL + 'model/model.json');
+    const model = await loadLayersModel(`${process.env.PUBLIC_URL}/model/model.json`);
     const inputTensor = preprocessInput(inputText); // Convert to tensor
     const prediction = model.predict(inputTensor);
     const response = interpretPrediction(prediction, tags);

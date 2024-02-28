@@ -1,8 +1,8 @@
 {
-  "homepage": "https://RyanBuss01.github.io/my-gpt",
   "name": "my-gpt",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://RyanBuss01.github.io/my-gpt",
   "dependencies": {
     "@tensorflow/tfjs": "^4.17.0",
     "@tensorflow/tfjs-node": "^4.17.0",
