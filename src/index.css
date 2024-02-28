@@ -26,7 +26,7 @@ h1 {
 .chat-container {
   display: flex;
   flex-direction: column;
-  height: 400px;
+  height: 450px;
   width: 400px;
   overflow-y: scroll;
   align-self: center;

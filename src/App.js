@@ -4,7 +4,7 @@
  * Messages array and mapping
  * 
  ********************************************************/
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import Message from './message';
 import {loadLayersModel, tensor2d} from '@tensorflow/tfjs';
 import porterStemmer from 'porter-stemmer';
@@ -26,6 +26,9 @@ function App() {
       message: "Hello"
     }
   ]);
+
+  const chatContainerRef = useRef(null);
+
 
 
 
@@ -125,14 +128,23 @@ function App() {
   }
 
   function sendMessage() {
-    if(message !== '' && !loading) {
-      setMessages([...messages, { user: "Me", message: message }]);
+    if (message !== '' && !loading) {
+      // Append new message from the user
+      setMessages(currentMessages => [...currentMessages, { user: "Me", message: message }]);
+      
+      // Clear the message input field and indicate loading
       setMessage('');
       setLoading(true);
+  
+      // Get the bot's response and append it
       getResponse(message).then((response) => {
-        setMessages([...messages, { user: "Bot", message: response }]);
+        setMessages(currentMessages => [...currentMessages, { user: "Bot", message: response }]);
+        if (chatContainerRef.current) {
+          // Use setTimeout to ensure this runs after React updates the DOM
+          setTimeout(() => chatContainerRef.current.scrollTop = chatContainerRef.current.scrollHeight, 0);
+        }
         setLoading(false);
-      })
+      });
     }
   }
   
@@ -140,9 +152,9 @@ function App() {
   return (
     <div className="App">
       <body>
-        <h1>Chat</h1>
+        <h1>My-GPT</h1>
         <div class="center-container">
-            <div id="chat-container" class="chat-container">
+            <div id="chat-container" class="chat-container" ref={chatContainerRef}>
             {messages.map((msg, index) => (
               // Create a new Message component for each message in the messages array
               < Message key={index} message={msg.message} user={msg.user} />
