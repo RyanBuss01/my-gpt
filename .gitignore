@@ -24,4 +24,5 @@ yarn-error.log*
 
 
 # nodejs env files
-nodejs-production-env/
+nodejs-production-env/node_modules/
+nodejs-production-env/data/
